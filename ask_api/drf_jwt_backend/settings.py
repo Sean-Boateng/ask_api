@@ -40,7 +40,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'authentication.apps.AuthenticationConfig',
     'corsheaders',
-    'prompt'  # This app is for example use only
+    'prompt',  # This app is for example use only
+    'response'
 ]
 
 MIDDLEWARE = [
