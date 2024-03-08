@@ -4,6 +4,6 @@ from response import views
 # <<<<<<<<<<<<<<<<< EXAMPLE FOR STARTER CODE USE <<<<<<<<<<<<<<<<<
 
 urlpatterns = [
-    path('<int:user_id>/', views.submit_reply, name='submit_reply'),
-    path('get/<int:user_id>/', views.get_responses),
+    path('<int:prompt_id>/', views.submit_reply, name='submit_reply'),
+    path('get/<int:prompt_id>/', views.get_responses),
 ]
