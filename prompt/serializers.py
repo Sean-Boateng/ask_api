@@ -7,5 +7,5 @@ from .models import Prompt
 class PromptSerializer(serializers.ModelSerializer):
     class Meta:
         model = Prompt
-        fields = ['id', 'question', 'date','user_id','unique_link']
+        fields = ['id', 'question', 'date','user_id']
         depth = 1

@@ -19,13 +19,12 @@ def get_all_prompts(request):
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticated])
 def manage_prompts(request):
-    print(
-        'User ', f"{request.user.id} {request.user.email} {request.user.username}")
+    print('User ', f"{request.user.id} {request.user.email} {request.user.username}")
     if request.method == 'POST':
         serializer = PromptSerializer(data=request.data)
         if serializer.is_valid():
-            serializer.save(user=request.user)
-            return Response({'unique_link': prompt.unique_link}, status=status.HTTP_201_CREATED)
+            prompt = serializer.save(user=request.user)
+            return Response({'prompt_id': prompt.id}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
     elif request.method == 'GET':
         prompt = Prompt.objects.filter(user_id=request.user.id)

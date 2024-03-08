@@ -9,7 +9,7 @@ class Migration(migrations.Migration):
     initial = True
 
     dependencies = [
-        ('prompt', '0002_prompt_delete_car'),
+        
     ]
 
     operations = [
@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
                 ('email', models.EmailField(max_length=254)),
                 ('response', models.CharField(max_length=500)),
                 ('date', models.DateField()),
-                ('prompt', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='prompt.prompt')),
+                
             ],
         ),
     ]

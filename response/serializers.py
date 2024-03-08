@@ -1,6 +1,7 @@
 
+from response.models import Response
 from rest_framework import serializers
-from .models import Response, Prompt
+
 
 # <<<<<<<<<<<<<<<<< EXAMPLE FOR STARTER CODE USE <<<<<<<<<<<<<<<<<
 
@@ -8,5 +9,5 @@ from .models import Response, Prompt
 class ResponseSerializer(serializers.ModelSerializer):
     class Meta:
         model = Response
-        fields = ['id', 'name', 'email', 'response', 'unique_link', 'date']
+        fields = ['id', 'name', 'email', 'response', 'prompt_id', 'date']
         depth = 1
